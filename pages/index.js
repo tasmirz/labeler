@@ -1,12 +1,12 @@
 import react, { useEffect, useRef, useState } from 'react'
 import * as fabric from 'fabric'
-import * as pdfjsLib from 'pdfjs-dist/webpack'//Requires node >22, recent browser
 import styles from './index.module.css'
 import { Rect } from 'fabric';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 
-let canvasLoaded = false;
+
+var pdfjsLib;
 export default function Index() {
     const wisdom = ["Cooking.....", "Brewing Cofee...", "Siam Arif Gay", "Auto Chai", "WaItin", "Sure fail", "Get a life, will you?", "BUET er porei KUET", "CSE Amar passion", "KUET iss <3,,, what yikEs"]
     var anno, pdl, pdlh;
@@ -38,7 +38,8 @@ export default function Index() {
 
 
 
-    useEffect(() => {
+    useEffect(async () => {
+        pdfjsLib = await import('pdfjs-dist/webpack');
         document.body.addEventListener("keyup", setChar)
         if (!annoRef) return
         anno = new fabric.Canvas(annoRef.current, { selection: false });
