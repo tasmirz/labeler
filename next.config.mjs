@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   output: 'export',
-  assetPrefix: './'
+  assetPrefix: './out/'
 };
 
 export default nextConfig;
