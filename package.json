@@ -1,0 +1,28 @@
+{
+  "name": "labeler",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "fabric": "^6.0.0",
+    "file-saver": "^2.0.5",
+    "fs": "^0.0.1-security",
+    "jszip": "^3.10.1",
+    "next": "14.2.4",
+    "pdfjs": "^2.5.3",
+    "pdfjs-dist": "^4.3.136",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

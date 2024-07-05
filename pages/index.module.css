@@ -1,0 +1,260 @@
+.SidePane {
+    --bg: blanchedalmond;
+    --bs1: rgba(138, 119, 95, 0.393);
+    --ac1: rgb(169, 151, 127);
+    --ac2: rgb(138, 119, 95);
+    --ac3: rgb(234, 181, 144);
+    --ac4: rgb(211, 175, 148);
+    --ds: rgba(0, 0, 0, .165);
+}
+
+.wait {
+    --kai: rgba(245, 222, 179, 0.796);
+    --kai2: rgba(245, 222, 179, 1);
+}
+
+.SidePane {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 10vw;
+    height: 100%;
+    padding: 2vw;
+    background-color: var(--bg);
+    box-shadow: 0px 0px 10px var(--bs1);
+    border-radius: 1vw 0 0 1vw;
+    z-index: 98;
+}
+
+
+.SideControls {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.StatusBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.StatusBar>div {
+    margin-bottom: 10px;
+    border-left: 2px solid var(--ac2);
+    border-radius: 3px;
+    height: 20px;
+    display: block;
+    float: left;
+    width: 28%;
+    display: flex;
+    background: var(--ac3);
+    cursor: pointer;
+}
+
+.StatusBar>div:hover {
+    box-shadow: 1px 1px 2px var(--ds);
+}
+
+
+.StatusBar>div>b {
+    font-weight: normal;
+    padding-left: 15%;
+    width: 110%;
+    border-right: 1px dotted
+}
+
+.StatusBar>div>span {
+    padding-right: 15%;
+    padding-top: 4%;
+    font-size: smaller;
+    text-align: right;
+    width: 100%;
+}
+
+.layerContainer {}
+
+.pdf {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.anno {
+    position: absolute;
+    left: 0px;
+    top: 0px
+}
+
+.canvasHidden {
+    position: absolute;
+    display: hidden;
+}
+
+.charView {
+    border-radius: 10px;
+    background: var(--ac1);
+    display: flex;
+    width: 100%;
+
+    margin-top: 50px;
+    height: 120px;
+    margin-bottom: 80px;
+}
+
+.charView>div {
+    height: 120px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.charView>div:hover {
+    box-shadow: 1px 1px 2px var(--ds)
+}
+
+.charView>div:nth-child(odd) {
+    border-radius: 10px 0px 0px 10px;
+    border-right: 1px solid;
+}
+
+.charView>div:nth-child(even) {
+    border-radius: 0px 10px 10px 0px;
+    border-left: 1px solid;
+}
+
+.charView span {
+    height: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.charView p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    height: 20px;
+    width: 100%;
+
+    text-align: center;
+    font-size: smaller
+}
+
+.navBar,
+.SideControls {
+    margin-top: 40px;
+    height: 40px;
+    display: flex;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+
+
+.navBar input {
+    cursor: pointer;
+    width: 33.33%;
+    border: none
+}
+
+.SideControls input {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--ac1);
+    border: 0.01px solid;
+}
+
+.SideControls input:hover {
+    box-shadow: 2px 2px 2px var(--ds)
+}
+
+.navBar input:hover {
+    box-shadow: 2px 2px 2px var(--ds)
+}
+
+.navBar span::before {
+    content: '/';
+}
+
+.navBar span {
+    position: relative;
+    left: -20%;
+    top: 30%;
+    width: 0px;
+    opacity: 0.2;
+}
+
+.navBar input:nth-child(1) {
+    border-radius: 10px 0px 0px 10px;
+    background: var(--ac1);
+}
+
+.navBar input:nth-child(2) {
+    width: 50%;
+    text-align: center;
+}
+
+.navBar input:nth-child(4) {
+    border-radius: 0px 10px 10px 0px;
+    background: var(--ac1);
+}
+
+.preUP {
+    margin-top: 40px;
+    height: 40px;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.preUP input[type="file"] {
+    display: none;
+}
+
+.preUP label {
+    cursor: pointer;
+    width: 33.33%;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--ac1);
+    border: none;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.preUP label:hover {
+    box-shadow: 2px 2px 2px var(--ds)
+}
+
+.wait {
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0px 0px 100px var(--kai2);
+    background-color: var(--kai);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+    z-index: 99;
+    animation: wait 1s alternate 0s infinite both;
+}
+
+@keyframes wait {
+    from {
+        font-size: xx-large
+    }
+
+    to {
+        font-size: larger;
+    }
+}
