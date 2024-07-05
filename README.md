@@ -1,3 +1,3 @@
 # labeler
  
-> The source code will b refactored after beta testing
+> The source code will bes refactored after beta testing
