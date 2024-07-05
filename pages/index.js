@@ -267,7 +267,7 @@ export default function Index() {
                     </div>
                     <div    >
                         <span ref={keyRefCurr}>-</span>
-                        <p>new</p>
+                        <p>current</p>
                     </div>
                 </div>
 
