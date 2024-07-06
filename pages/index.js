@@ -119,7 +119,7 @@ export default function Index() {
                 page.render({ canvasContext: pdl, viewport: viewport }).promise.then(() => {
                     fuhR.current.style.display = 'none'
                     ltR.current.style.display = 'block'
-                    detachWait()
+                    navigation(false, 1);
                 });
             });
         })
@@ -242,10 +242,13 @@ export default function Index() {
         pdfRefH.current.height = pdfRef.current.height
 
         if (states.get(state.currentPage) === undefined) anno.setHeight(canvas.height)
-        else await new Promise((resolve) => anno.loadFromJSON(states.get(state.currentPage), () => {
-            anno.requestRenderAll()
-            resolve()
-        }))
+        else
+            if (states.get(state.currentPage).objects.length)
+                await new Promise((resolve) => anno.loadFromJSON(states.get(state.currentPage), () => {
+                    anno.requestRenderAll()
+                    resolve()
+                }))
+
         await new Promise((resolve) => page.render({ canvasContext: pdl, viewport: viewport }).promise.then(() => { resolve() }));
         if (!daisy) detachWait()
     }
